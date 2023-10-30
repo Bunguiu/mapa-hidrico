@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import "./App.css";
-import { MapContainer, Marker, Popup, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import { LatLngExpression, LeafletMouseEvent } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import villa from "./resources/villanueva.json";
@@ -48,15 +47,15 @@ function App() {
                     );
                     layer.on({
                       mouseover: (e: LeafletMouseEvent) => {
-                        if (feature.geometry.type != "Polygon")
+                        if (feature.geometry.type !== "Polygon")
                           e.target.setStyle({ weight: 10 });
                       },
                       mouseout: (e: LeafletMouseEvent) => {
-                        if (feature.geometry.type != "Polygon")
+                        if (feature.geometry.type !== "Polygon")
                           e.target.setStyle({ weight: 3 });
                       },
                     });
-                    if (feature.geometry.type != "Polygon")
+                    if (feature.geometry.type !== "Polygon")
                       layer.bindPopup(popupContent);
                   }}
                 ></GeoJSON>
