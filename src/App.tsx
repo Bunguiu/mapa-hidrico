@@ -11,18 +11,14 @@ import mapaVilla from "./resources/villanueva.jpeg";
 function App() {
   const position: LatLngExpression = [15.298706, -88.012954];
   return (
-    <div>
-      <div className="bg-black p-2 text-white flex justify-between">
+    <div className="h-[96.6vh]">
+      <div className="bg-black p-2  text-white flex justify-between ">
         <p>Mapa Hidrico de Honduras</p>
         <p>Fecha de publicación: 14/09/2023</p>
       </div>
-      <div className="w-full h-[500px] flex">
+      <div className="w-full h-full flex">
         <div className="w-2/3">
-          <MapContainer
-            center={position}
-            zoom={12}
-            className="w-full h-[100vh]"
-          >
+          <MapContainer center={position} zoom={12} className="w-full h-full">
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://api.mapbox.com/styles/v1/mapbox/outdoors-v12/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYm5vcmFsZXMiLCJhIjoiY2wxamc1MXFuMDlncjNjcWdjOTNyc2FyeCJ9.RnFL5S2gg46H2WjVXLoWeA"
@@ -63,7 +59,7 @@ function App() {
             })}
           </MapContainer>
         </div>
-        <div className="w-1/3 h-[100vh] overflow-scroll">
+        <div className="w-1/3  overflow-scroll text-justify ">
           <img className="w-full h-[350px]" src={mapaVilla} alt="/any" />
           <section className="border-b p-3">
             <p className=" text-2xl">Villanueva, Cortes</p>
