@@ -9,7 +9,7 @@ import ReactDOMServer from "react-dom/server";
 import mapaVilla from "./resources/villanueva.jpeg";
 
 function App() {
-  const position: LatLngExpression = [15.298706, -88.012954];
+  const position: LatLngExpression = [15.317336, -88.014222];
   return (
     <div className="h-[96.6vh]">
       <div className="bg-black p-2  text-white flex justify-between ">
